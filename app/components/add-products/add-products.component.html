@@ -1,0 +1,52 @@
+<div class="Wrapper">
+    <div class="title">
+        <label class="h4">Añadir Productos</label>
+    </div>
+    <form [formGroup]="form">
+        <div class="form row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                <!-- <div class="form-floating mb-3">
+                    <select formControlName="identification_Catalogid" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                      <option disabled selected>Tipo De Indentificación</option>
+                      <option value="CED-DUI">Cedula</option>
+                        <option value="PAS-DUI">Pasaporte</option>
+                    </select>
+                    <label for="floatingSelect">Tipo De Indentificación</label>
+                </div> -->
+
+                <div class="form-floating mb-3">
+                    <input required formControlName="Name" type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                    <label for="floatingInput">Nombre</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <textarea required formControlName="Description" class="form-control" placeholder="Descripción" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Descripción</label>
+                  </div>
+
+                <div class="form-floating mb-3">
+                    <input required formControlName="Price" type="number" class="form-control" id="floatingInput" placeholder="Precio">
+                    <label for="floatingInput">Precio</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input required formControlName="Size" type="text" class="form-control" id="floatingInput" placeholder="Tamaño">
+                    <label for="floatingInput">Tamaño</label>
+                </div>
+
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                    <input (change)="onChange($event)" class="form-control" type="file" id="formFile">
+                  </div>
+            </div>
+
+        </div>
+
+        <div class="btn-center mt-4">
+
+            <button mat-button (click)="submit()" class="btn btn-success btn2-center">Añadir</button>
+        </div>
+    </form>
+
+</div>
