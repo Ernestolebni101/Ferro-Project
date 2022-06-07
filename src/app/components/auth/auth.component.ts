@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -8,8 +9,8 @@ import { AuthService } from './auth.service';
 })
 export class AuthComponent implements OnInit {
  
-  constructor(private readonly oAuth:AuthService) {
-  }
+  constructor(private readonly oAuth:AuthService,
+              private readonly router:Router) {}
 
   ngOnInit(): void {
   
@@ -21,6 +22,11 @@ export class AuthComponent implements OnInit {
 
   Login():void{
     const {email,password} = this.user;
-    this.oAuth.Login(email,password).then(data => console.log("DATOS DE SESION",data));
+    this.oAuth.Login(email,password)
+        .then((data) => {
+          this.router.navigate(['admin']);
+        }).catch((e) => {
+          console.error(e)
+        });
   }
 }
