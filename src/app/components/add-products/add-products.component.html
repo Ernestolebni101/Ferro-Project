@@ -16,18 +16,28 @@
                 </div> -->
 
                 <div class="form-floating mb-3">
-                    <input required formControlName="CertificateTypesCode" type="text" class="form-control" id="floatingInput" placeholder="Código de Unidad">
-                    <label for="floatingInput">Código</label>
+                    <input required formControlName="Name" type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                    <label for="floatingInput">Nombre</label>
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input required formControlName="CertificateName" type="text" class="form-control" id="floatingInput" placeholder="Nombre">
-                    <label for="floatingInput">Nombre</label>
-                  </div>
-
-                  <div class="form-floating mb-3">
                     <textarea required formControlName="Description" class="form-control" placeholder="Descripción" id="floatingTextarea2" style="height: 100px"></textarea>
                     <label for="floatingTextarea2">Descripción</label>
+                  </div>
+
+                <div class="form-floating mb-3">
+                    <input required formControlName="Price" type="number" class="form-control" id="floatingInput" placeholder="Precio">
+                    <label for="floatingInput">Precio</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input required formControlName="Size" type="number" class="form-control" id="floatingInput" placeholder="Tamaño">
+                    <label for="floatingInput">Tamaño</label>
+                </div>
+
+                <div class="mb-3">
+                    <label for="formFile" formControlName="ImageUrl" class="form-label">Default file input example</label>
+                    <input class="form-control" type="file" id="formFile">
                   </div>
             </div>
 
