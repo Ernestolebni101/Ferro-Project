@@ -29,18 +29,9 @@ export class AddProductsComponent implements OnInit {
 
   async submit(){
     if (this.form.value){
-      this.storage.upload("path_name", this.image).then(rst => {
-        rst.ref.getDownloadURL().then(url => {
-          console.log(url);
-          this.form.value.ImageUrl = url;
-        })
-      })
-      // let jsonContent = JSON.stringify(this.formData)
-      console.log("OBJETO");
-      console.log(this.form.value);
-      console.log("FILE");
-      console.log(this.image);
-
+      
+      const response = await Promise.all([this.storage.upload("path_name", this.image)]);
+      this.form.value.ImageUrl = await response[0].ref.getDownloadURL();
       await this.db.collection('Products').add(this.form.value);
 
       this.router.navigate(["admin"]);
