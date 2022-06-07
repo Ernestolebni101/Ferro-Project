@@ -8,6 +8,7 @@ import { FooterComponent } from './common/footer/footer.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { PresentationComponent } from './components/presentation/presentation.component';
 import { APP_ROUTING } from './app.routes';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { APP_ROUTING } from './app.routes';
     NavbarComponent,
     FooterComponent,
     AuthComponent,
-    PresentationComponent
+    PresentationComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
