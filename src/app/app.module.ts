@@ -14,7 +14,7 @@ import { APP_ROUTING } from './app.routes';
 import {AngularFireModule} from "@angular/fire/compat"
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore"
 
-
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import {AngularFirestoreModule} from "@angular/fire/compat/firestore"
     NavbarComponent,
     FooterComponent,
     AuthComponent,
-    PresentationComponent
+    PresentationComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
