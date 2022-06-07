@@ -15,7 +15,8 @@ import {AngularFireModule} from "@angular/fire/compat"
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore"
 
 import { AdminComponent } from './components/admin/admin.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddProductsComponent } from './components/add-products/add-products.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +25,13 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     AuthComponent,
     PresentationComponent,
-    AdminComponent
+    AdminComponent,
+    AddProductsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     APP_ROUTING,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
