@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+ 
+  constructor(private readonly oAuth:AuthService) {
   }
 
+  ngOnInit(): void {
+  
+  } 
+  user = {
+    email: '',
+    password: ''
+  }
+
+  Login():void{
+    const {email,password} = this.user;
+    this.oAuth.Login(email,password).then(data => console.log("DATOS DE SESION",data));
+  }
 }

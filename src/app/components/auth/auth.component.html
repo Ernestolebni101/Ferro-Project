@@ -6,7 +6,7 @@
           class="img-fluid" alt="ferro logo">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 gray-bg p-5">
-        <form>
+        <form #form="ngForm">
 
           <div class="divider d-flex align-items-center my-4">
             <h2 class="text-center fw-bold mx-3 mb-0 t-white">INICIAR SESIÓN</h2>
@@ -14,15 +14,15 @@
 
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <h5 class="text-center mb-3 t-white">Introduzca su usuario y contraseña</h5>
+            <h5 class="text-center mb-3 t-white">Introduzca su correo y contraseña</h5>
             <input type="email" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Usuario" />
+              placeholder="email" [(ngModel)]= "user.email" [ngModelOptions]="{standalone: true}" />
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
             <input type="password" id="form3Example4" class="form-control form-control-lg"
-              placeholder="Contraseña" />
+              placeholder="password" [(ngModel)]= "user.password" [ngModelOptions]="{standalone: true}"/>
           </div>
 
           <div class="d-flex justify-content-between align-items-center">
@@ -37,7 +37,7 @@
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2 d-grid">
-            <button type="button" class="btn btn-primary btn-lg black-bg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            <button type="button" class="btn btn-primary btn-lg black-bg" style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="Login()">Login</button>
           </div>
 
         </form>

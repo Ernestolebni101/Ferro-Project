@@ -15,6 +15,7 @@ import {AngularFireModule} from "@angular/fire/compat"
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore"
 
 import { AdminComponent } from './components/admin/admin.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AdminComponent } from './components/admin/admin.component';
     AppRoutingModule,
     APP_ROUTING,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
