@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import {AngularFirestore} from "@angular/fire/compat/firestore"
-
+import { AngularFirestore } from "@angular/fire/compat/firestore"
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-products',
   templateUrl: './add-products.component.html',
@@ -9,6 +10,7 @@ import {AngularFirestore} from "@angular/fire/compat/firestore"
 })
 export class AddProductsComponent implements OnInit {
 
+  image:any;
   form:FormGroup = new FormGroup({
     Name: new FormControl(''),
     Description: new FormControl(''),
@@ -18,26 +20,37 @@ export class AddProductsComponent implements OnInit {
   });
 
   formData:FormData = new FormData();
-  constructor(private readonly db:AngularFirestore) { }
+  constructor(private readonly db:AngularFirestore,
+              private readonly storage:AngularFireStorage,
+              private router:Router) { }
 
   ngOnInit(): void {
   }
 
-  submit(){
+  async submit(){
     if (this.form.value){
-      this.formData.append('Name', this.form.value.Name);
-      this.formData.append('Description', this.form.value.Description);
-      this.formData.append('Price', `C$ ${this.form.value.Price}`);
-      this.formData.append('Size', this.form.value.Size);
+      this.storage.upload("path_name", this.image).then(rst => {
+        rst.ref.getDownloadURL().then(url => {
+          console.log(url);
+          this.form.value.ImageUrl = url;
+        })
+      })
+      // let jsonContent = JSON.stringify(this.formData)
+      console.log("OBJETO");
+      console.log(this.form.value);
+      console.log("FILE");
+      console.log(this.image);
+
+      await this.db.collection('Products').add(this.form.value);
+
+      this.router.navigate(["admin"]);
     }
 
   }
 
   onChange(event:any){
-    let reader:FileReader = new FileReader();
-
-    if (event.target.fils && event.target.length){
-      this.formData.append('ImageUrl', event.targe.files[0]);
+    if (event.target.files && event.target.files.length){
+      this.image = event.target.files[0];
     }
   }
 }
