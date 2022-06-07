@@ -1,16 +1,28 @@
-<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom mx-5">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-      <span class="fs-4"></span>
-      <h2>FERRÓ</h2>
-    </a>
-
-    <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#" class="nav-link link-dark" aria-current="page">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link link-dark">Tienda</a></li>
-      <li class="nav-item"><a href="#" class="nav-link link-dark">Sobre Nosotros</a></li>
-      <li class="nav-item"><a href="#" class="nav-link link-dark">Contacto</a></li>
-      <li class="nav-item"><a href="#" class="nav-link link-dark"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-      <li class="nav-item"><a href="#" class="nav-link link-dark"><i class="fa-solid fa-heart"></i></a></li>
-      <li class="nav-item"><a href="#" class="nav-link link-dark"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
-    </ul>
-  </header>
+<nav class="navbar navbar-expand-lg bg-light fixed-top">
+  <div class="container-fluid">
+    <h3>FERRÓ</h3>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-house-chimney me-1"></i>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa-solid fa-cart-arrow-down me-1"></i>Tienda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa-solid fa-sitemap me-1"></i>Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa-solid fa-envelope me-1"></i>Contacto</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>
