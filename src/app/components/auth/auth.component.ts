@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
- 
+
   constructor(private readonly oAuth:AuthService,
               private readonly router:Router) {}
 
   ngOnInit(): void {
-  
-  } 
+
+  }
   user = {
     email: '',
     password: ''
@@ -24,6 +24,7 @@ export class AuthComponent implements OnInit {
     const {email,password} = this.user;
     this.oAuth.Login(email,password)
         .then((data) => {
+          console.log(data);
           this.router.navigate(['admin']);
         }).catch((e) => {
           console.error(e)

@@ -37,14 +37,14 @@
 
                 <div class="mb-3">
                     <label for="formFile" formControlName="ImageUrl" class="form-label">Default file input example</label>
-                    <input class="form-control" type="file" id="formFile">
+                    <input (change)="onChange($event)" class="form-control" type="file" id="formFile">
                   </div>
             </div>
 
         </div>
 
         <div class="btn-center mt-4">
-                
+
             <button mat-button (click)="submit()" class="btn btn-success btn2-center">Añadir</button>
         </div>
     </form>
