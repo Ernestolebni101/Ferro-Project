@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-admin',
@@ -7,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  products:any;
-  constructor() { }
+  products:Observable<any>;
+  constructor(private readonly db:AngularFirestore) {
+    this.products = db.collection("Products").valueChanges()
+   }
 
   ngOnInit(): void {
+    this.products.forEach(p=> console.log(p))
   }
 
 }
