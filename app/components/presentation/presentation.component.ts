@@ -14,6 +14,7 @@ export class PresentationComponent implements OnInit {
     this.items = db.collection('Products').valueChanges();
    }
   ngOnInit(): void {
+    this.items.forEach(a => console.log(a))
   }
 
 
