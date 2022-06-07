@@ -139,20 +139,19 @@
 
     <div class="carousel-inner pb-5" style="padding-left: 150px; padding-right: 150px;">
 
-        <div class="carousel-item active">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/ferro-44a.appspot.com/o/liq1.png?alt=media&token=6d62b17d-6400-44aa-be5a-e2e6f629a8f1" class="card-img-top" alt="...">
+          <div class="carousel-item active">
+              <div class="row row-cols-1 row-cols-md-3 g-4">
+                  <div class="col">
+                      <div class="card"  *ngFor="let item of items | async">
+                        <img [src]="item.imageUrl" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Sueter C$300</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to additional content. This content is a little bit longer.</p>
+                            <h5 class="card-title">{{item.productName}} talla: {{item.size}} {{item.price}} </h5>
+                            <p class="card-text">{{item.description}}</p>
                                 <button class="btn btn-outline-dark">Comprar</button>
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <!-- <div class="col">
                     <div class="card">
                         <img src="https://firebasestorage.googleapis.com/v0/b/ferro-44a.appspot.com/o/liq2.png?alt=media&token=af60ec74-d007-4df6-973c-d8a56854c037" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -211,7 +210,7 @@
                                 <button class="btn btn-outline-dark">Comprar</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
