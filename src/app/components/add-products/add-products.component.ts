@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import {AngularFirestore} from "@angular/fire/compat/firestore"
 
 @Component({
   selector: 'app-add-products',
@@ -9,7 +10,7 @@ import { FormGroup } from '@angular/forms';
 export class AddProductsComponent implements OnInit {
 
   form:FormGroup = new FormGroup({});
-  constructor() { }
+  constructor(private readonly db:AngularFirestore) { }
 
   ngOnInit(): void {
   }
