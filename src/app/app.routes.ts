@@ -8,7 +8,8 @@ const APP_ROUTES = [
     {path:'login',component: AuthComponent},
     {path:'admin',component: AdminComponent},
     {path:'presentation',component:PresentationComponent},
-    {path: 'add', component:AddProductsComponent}
+    {path: 'add', component:AddProductsComponent},
+    { path: '**', pathMatch: 'full', redirectTo: 'presentation' }
 
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
